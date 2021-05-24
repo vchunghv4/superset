@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useState} from 'react';
 import { SupersetTheme } from '@superset-ui/core';
 import { InputProps } from 'antd/lib/input';
 import ValidatedInput from 'src/components/Form/LabeledErrorBoundInput';
+import { Button, Select, Input, Upload } from 'src/common/components';
 import {
   StyledFormHeader,
   formScrollableStyles,
@@ -34,6 +35,7 @@ export const FormFieldOrder = [
   'username',
   'password',
   'database_name',
+  'credentials_info',
 ];
 
 interface FieldPropTypes {
@@ -42,6 +44,33 @@ interface FieldPropTypes {
     onChange: (value: any) => string;
   };
 }
+
+const CredentialInfo = ({ required, changeMethods }: FieldPropTypes) => {
+  const [uploadOption, setUploadOption] = useState<string>('upload');
+  return (
+    <>
+      <Select
+        defaultValue={'file'}
+        style={{ width: '100%' }}
+        onChange={value => {
+          setUploadOption(value);
+        }}
+      >
+        <Select value="file">Upload JSON file</Select>
+        <Select value="paste">Copy and Paste JSON credentials</Select>
+      </Select>
+      {uploadOption === 'paste' ? (
+        <div className="input-container">
+          <Input rows={4}/>
+        </div>
+      ) : (
+        <Upload>
+          <Button>Click to Upload</Button>
+        </Upload>
+      )}
+    </>
+  );
+};
 
 const hostField = ({ required, changeMethods }: FieldPropTypes) => (
   <ValidatedInput
@@ -121,6 +150,7 @@ const FORM_FIELD_MAP = {
   username: usernameField,
   password: passwordField,
   database_name: displayField,
+  credentials_info: CredentialInfo,
 };
 
 const DatabaseConnectionForm = ({
