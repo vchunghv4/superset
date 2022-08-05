@@ -3,48 +3,25 @@ entries:
   superset:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2021-04-26T17:37:36.943792032Z"
+    created: "2022-08-05T03:51:48.399498294Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
       repository: https://charts.bitnami.com/bitnami
-      version: 10.2.0
+      version: 11.1.22
     - condition: redis.enabled
       name: redis
       repository: https://charts.bitnami.com/bitnami
-      version: 12.3.0
+      version: 16.3.1
     description: Apache Superset is a modern, enterprise-ready business intelligence
       web application
-    digest: a2120cb7edc9c75464375e7a8f72a20c385775ef72bda36fe98953161d28ee08
+    digest: 74b18a276827e54a7dc70130054b00fa4e829d0a95096b119b55c4d6f72adf81
     maintainers:
     - email: craig@craigrueda.com
       name: craig-rueda
       url: https://github.com/craig-rueda
     name: superset
     urls:
-    - https://github.com/apache/superset/releases/download/superset-helm-chart-0.1.2/superset-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: "1.0"
-    created: "2021-04-17T16:14:32.785158744Z"
-    dependencies:
-    - condition: postgresql.enabled
-      name: postgresql
-      repository: https://charts.bitnami.com/bitnami
-      version: 10.2.0
-    - condition: redis.enabled
-      name: redis
-      repository: https://charts.bitnami.com/bitnami
-      version: 12.3.0
-    description: Apache Superset is a modern, enterprise-ready business intelligence
-      web application
-    digest: 9507c684722e4ee74f40fdb4959d58ec0e118aaf81164dc6eee137e909fe5a7f
-    maintainers:
-    - email: craig@craigrueda.com
-      name: craig-rueda
-      url: https://github.com/craig-rueda
-    name: superset
-    urls:
-    - https://github.com/apache/superset/releases/download/superset-helm-chart-0.1.1/superset-0.1.1.tgz
-    version: 0.1.1
-generated: "2021-04-26T17:37:36.943804833Z"
+    - https://github.com/vchunghv4/superset/releases/download/superset-helm-chart-0.7.0/superset-0.7.0.tgz
+    version: 0.7.0
+generated: "2022-08-05T03:51:48.399508295Z"
